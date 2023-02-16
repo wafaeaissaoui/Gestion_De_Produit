@@ -1,12 +1,16 @@
 ﻿using Gestion_de_Produit.models;
+using Gestion_de_Produit.Utils;
 
 namespace Gestion_de_Produit.Services
 {
     public class ProduitService : IProduit
     {
-        public Task<Produit> GetProduitById(Guid produitId)
+        
+        public Task<Produit> GetProduitById(int produitId)
         {
-            throw new NotImplementedException();
+            var res=  NorthwindAPI.GetProduitById<Produit>(produitId);
+            return res;
+           
         }
 
         public Task<Produit> GetProduitByItem(string item)
@@ -14,9 +18,9 @@ namespace Gestion_de_Produit.Services
             throw new NotImplementedException();
         }
 
-        public Task<List<Produit>> GetProduitList()
+        public async Task<IEnumerable<Produit>> GetProduitList()
         {
-            throw new NotImplementedException();
+            return await NorthwindAPI.Downloading<Produit>();
         }
     }
 }

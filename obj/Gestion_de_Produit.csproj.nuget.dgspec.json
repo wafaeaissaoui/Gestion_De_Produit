@@ -39,6 +39,32 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "C1.DataEngine": {
+              "target": "Package",
+              "version": "[5.0.20223.290, )"
+            },
+            "C1.DataEngine.Api": {
+              "target": "Package",
+              "version": "[5.0.20223.290, )"
+            },
+            "Flurl": {
+              "target": "Package",
+              "version": "[3.0.7, )"
+            },
+            "Flurl.Http": {
+              "target": "Package",
+              "version": "[3.2.4, )"
+            },
+            "Microsoft.CodeAnalysis.Workspaces.Common": {
+              "target": "Package",
+              "version": "[4.4.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

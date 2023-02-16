@@ -1,2 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
-<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" />
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)c1.dataengine\5.0.20223.290\buildTransitive\netstandard2.0\C1.DataEngine.targets" Condition="Exists('$(NuGetPackageRoot)c1.dataengine\5.0.20223.290\buildTransitive\netstandard2.0\C1.DataEngine.targets')" />
+    <Import Project="$(NuGetPackageRoot)c1.dataengine.api\5.0.20223.290\buildTransitive\netstandard2.0\C1.DataEngine.Api.targets" Condition="Exists('$(NuGetPackageRoot)c1.dataengine.api\5.0.20223.290\buildTransitive\netstandard2.0\C1.DataEngine.Api.targets')" />
+  </ImportGroup>
+</Project>
