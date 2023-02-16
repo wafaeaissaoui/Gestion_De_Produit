@@ -5,8 +5,8 @@ namespace Gestion_de_Produit.Services
     public interface IProduit
     {
         
-        Task<List<Produit>> GetProduitList();
-        Task<Produit> GetProduitById(Guid produitId);
+        Task<IEnumerable<Produit>> GetProduitList();
+        Task<Produit> GetProduitById(int produitId);
         Task<Produit> GetProduitByItem(string item);
     }
 }

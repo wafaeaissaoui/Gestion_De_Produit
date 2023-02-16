@@ -1,0 +1,29 @@
+﻿@using Gestion_de_Produit.models
+@model List<Produit>
+@{  
+    Layout = "_Layout";
+}
+<h1>hello !</h1>
+ Recherch <input name="recherche" />
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nom Produit</th>
+            <th>Vendeur</th>
+            <th>prix unitaire</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in @Model)
+        {
+        <tr>
+            <td>@item.ProductID</td>
+            <td>@item.ProductName</td>
+            <td>@item.QuantityPerUnit</td>
+            <td>@item.UnitPrice</td>
+        </tr>
+          }
+    </tbody>
+</table>
+
