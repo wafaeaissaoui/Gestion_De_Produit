@@ -4,7 +4,7 @@
     Layout = "_Layout";
 }
 <h1>hello !</h1>
- Recherche  <input name="recherche" />
+Rechercher <input name="RECHERCHE" />
 <table class="table">
     <thead>
         <tr>
@@ -22,7 +22,7 @@
             <td>@item.ProductName</td>
             <td>@item.QuantityPerUnit</td>
             <td>@item.UnitPrice</td>
-            <td><a class="btn btn-primary" role="button" href="@Url.Action("details", "Produit", new { id = @item.ProductID})">Detail<a /></td>
+            <td><a class="btn btn-primary" role="button" href="@Url.Action("details", "Produit", new { id = @item.ProductID })">Detail<a /></td>
         </tr>
           }
     </tbody>

@@ -27,7 +27,7 @@ namespace Gestion_de_Produit
         {
             var data = await _produitService.GetProduitById(id);
             Console.WriteLine(data);
-            return View(data);
+            return View(data);  
         }
 
 

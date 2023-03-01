@@ -25,20 +25,18 @@ namespace Gestion_de_Produit.Utils
             JArray values = (JArray)root["value"];
             IEnumerable<T> listProduits = JsonConvert.DeserializeObject<IEnumerable<T>>(values.ToString());
             return listProduits;
-
-
         }
         public static async Task<T?> GetProduitById<T>(int Id)
         {
             var AppUrl = "https://services.odata.org/Experimental/Northwind/Northwind.svc";
-            var results = AppUrl
+                 var result =  AppUrl
                 .AppendPathSegment($"Products({Id})")
-                .GetAsync()
-                .Result;
-            //Console.WriteLine(results);
-            var reslt = await results.GetJsonAsync<T>();
-            //Console.WriteLine(reslt);
-            return (T?)reslt;
+                .SetQueryParam("", "", true)
+                .GetAsync().Result;
+            var reslt= result.GetStringAsync();
+            return JsonConvert.DeserializeObject<T>(reslt.Result);
+             
+
 
 
         }
